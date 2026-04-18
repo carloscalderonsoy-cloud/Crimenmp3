@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: "#FAEBD6";
+  font-family: 'ComicBook', sans-serif;
+  background-color: "#FAEBD6";
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.55s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.7s ease-out both;
+}
+
+@font-face {
+  font-family: 'ComicBook';
+  src: url('/fonts/comicbook.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueKabel';
+  src: url('/fonts/neuekabel.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
