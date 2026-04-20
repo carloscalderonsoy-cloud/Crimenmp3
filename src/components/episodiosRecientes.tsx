@@ -1,58 +1,46 @@
-import EpisodioTarjeta from "./episodioTarjeta";
 import { promises as fs } from 'fs';
+import EpisodioTarjeta from './episodioTarjeta';
 
 interface Episodio {
-    podcast_number: number
-    title: string
-    spotify_url: string
-    youtube_url: string
-    amazon_url: string
+  podcast_number: number
+  title: string
+  spotify_url: string
+  youtube_url: string
+  amazon_url: string
 }
 
-const RECENT_COUNT = 6;
-
 export default async function EpisodiosRecientes() {
-    const file = await fs.readFile(process.cwd() + '/src/data/episodios.json', 'utf8');
-    const data = JSON.parse(file);
-    const episodios: Episodio[] = data.episodios;
+  const file = await fs.readFile(process.cwd() + '/src/data/episodios.json', 'utf8');
+  const data = JSON.parse(file);
+  const episodios: Episodio[] = data.episodios;
 
-    const recientes = [...episodios].reverse().slice(0, Math.min(RECENT_COUNT, episodios.length));
-    const fila1 = recientes.slice(0, 3);
-    const fila2 = recientes.slice(3, 6);
+  const recientes = episodios.slice(-6).reverse();
 
-    return (
-        <div className="flex flex-col items-center w-full px-4 md:px-0">
-            <span className="text-white text-3xl font-comic [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">Episodios Recientes</span>
-            <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-14 pt-10">
-                {fila1.map((ep) => (
-                    <div key={ep.podcast_number} className="mx-auto">
-                        <EpisodioTarjeta
-                            podcast_number={ep.podcast_number}
-                            title={ep.title}
-                            spotify_url={ep.spotify_url}
-                            youtube_url={ep.youtube_url}
-                            amazon_url={ep.amazon_url}
-                        />
-                    </div>
-                ))}
-            </div>
-            {fila2.length > 0 && (
-                <div className="hidden md:block">
-                    <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-14 pt-10">
-                        {fila2.map((ep) => (
-                            <div key={ep.podcast_number} className="mx-auto">
-                                <EpisodioTarjeta
-                                    podcast_number={ep.podcast_number}
-                                    title={ep.title}
-                                    spotify_url={ep.spotify_url}
-                                    youtube_url={ep.youtube_url}
-                                    amazon_url={ep.amazon_url}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
-        </div>
-    )
+  return (
+    <section id="episodios-recientes" className="py-24 px-8 md:px-16 bg-carbon">
+      <p className="font-mono-brand text-xs text-magenta tracking-[0.2em] mb-2 uppercase">
+        Episodios Recientes
+      </p>
+      <div className="w-16 h-0.5 bg-magenta mb-8" />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1.5">
+        {recientes.map((ep, index) => (
+          <div
+            key={ep.podcast_number}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${Math.min(index * 0.055, 0.55)}s` }}
+          >
+            <EpisodioTarjeta
+              podcast_number={ep.podcast_number}
+              title={ep.title}
+              spotify_url={ep.spotify_url}
+              youtube_url={ep.youtube_url}
+              amazon_url={ep.amazon_url}
+              variant="square"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

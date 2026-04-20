@@ -1,29 +1,62 @@
 'use client'
-import { FaArrowRight } from "react-icons/fa6";
+import Image from 'next/image';
 
-function Shop() {
+export default function Shop() {
+  const scrollToNewsletter = () => {
+    const el = document.getElementById('newsletter-section');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
-    const scrollToNewsLetter = () => {
-        const newsLetterSection = document.getElementById('newsletter-section');
-        if (newsLetterSection) {
-            newsLetterSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  return (
+    <section
+      id="shop-section"
+      className="py-24 bg-carbon relative overflow-hidden"
+    >
+      {/* Ambient gradients */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 50% at 80% 20%, rgba(252,71,175,0.12), transparent 60%), radial-gradient(ellipse 50% 50% at 10% 80%, rgba(150,64,161,0.18), transparent 60%)',
+        }}
+      />
 
-    return (
-        <div id="shop-section" className="bg-cream">
-            <div className="flex flex-col w-full items-center pt-16">
-                <span className="text-black text-3xl font-comic [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">Shop</span>
-                <div className="flex flex-row pt-10">
-                    <img src="/shop.png" />
-                </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-between sm:mx-20 pt-6 mx-4 sm:space-y-0 space-y-4">
-                <span className="text-3xl font-comic">Pre Ordena Ahora</span>
-                <span onClick={scrollToNewsLetter} className="hover:text-black cursor-pointer text-3xl font-comic text-light-purple flex flex-row items-center">Registro<FaArrowRight className="pl-2" /></span>
-            </div>
+      <div className="relative z-10 flex flex-col items-center text-center gap-5 px-6">
+        <p className="font-mono-brand text-xs text-teal tracking-[0.2em] uppercase">
+          PRÓXIMAMENTE
+        </p>
+
+        <h2 className="font-bebas text-7xl md:text-8xl text-cream leading-none">
+          TIENDA OFICIAL
+        </h2>
+
+        <div className="max-w-sm w-full mt-4 group">
+          <Image
+            src="/shop.png"
+            alt="Merch oficial de Crimen.mp3"
+            width={400}
+            height={400}
+            className="w-full h-auto rotate-[-2deg] group-hover:rotate-0 transition-transform duration-[400ms]"
+            style={{ boxShadow: '0 30px 80px rgba(150,64,161,0.25)' }}
+          />
         </div>
-    )
-}
 
-export default Shop;
+        <p className="font-nunito text-teal text-base max-w-sm">
+          Piezas limitadas para quienes escuchan a todo volumen. Serigrafía manual, numerada y con certificado firmado.
+        </p>
+
+        <div className="flex gap-4 mt-2 flex-wrap justify-center">
+          <button className="bg-magenta text-carbon font-bebas tracking-widest px-8 py-3 hover:bg-light-purple hover:text-cream transition-all duration-200">
+            PRE-ORDENAR AHORA
+          </button>
+          <button
+            onClick={scrollToNewsletter}
+            className="border border-light-purple text-light-purple font-bebas tracking-widest px-8 py-3 hover:border-magenta hover:text-magenta transition-all duration-200"
+          >
+            REGISTRARME
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
