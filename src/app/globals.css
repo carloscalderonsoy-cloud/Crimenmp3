@@ -150,6 +150,20 @@ body {
   border-right: 2px solid #FC47AF;
 }
 
+/* ── Featured episode responsive grid ── */
+.featured__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .featured__grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+  }
+}
+
 /* ── Local fonts with font-display: swap (FOUT fix) ── */
 @font-face {
   font-family: 'ComicBook';
