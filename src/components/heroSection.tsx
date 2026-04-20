@@ -71,7 +71,8 @@ export default function HeroSection({ latestEpisode }: Props) {
     };
   }, []);
 
-  const epNum = String(latestEpisode.podcast_number).padStart(3, '0');
+  const epNum = '041';
+  const featuredTitle = 'El Asesinato de Gianni Versace';
 
   return (
     <section
@@ -95,19 +96,6 @@ export default function HeroSection({ latestEpisode }: Props) {
       >
         <source src="/videos/hero-loop.mp4" type="video/mp4" />
       </video>
-
-      {/* ── Painterly still (extra atmosphere layer) ── */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/main-compressed.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.38,
-          filter: 'saturate(1.15) contrast(1.05) hue-rotate(-6deg)',
-          mixBlendMode: 'screen',
-        }}
-      />
 
       {/* ── VHS Scanlines ── */}
       <div className="hero__scanlines absolute inset-0 z-[1]" />
@@ -158,7 +146,7 @@ export default function HeroSection({ latestEpisode }: Props) {
         style={{ bottom: 28, left: 'clamp(20px, 4vw, 56px)' }}
       >
         EP·{epNum}<span className="mx-1.5 text-magenta">/</span>
-        <span className="hidden sm:inline">{latestEpisode.title.toUpperCase()}</span>
+        <span className="hidden sm:inline">{featuredTitle.toUpperCase()}</span>
         <span className="sm:hidden">ÚLT. EP</span>
       </div>
       <div
@@ -271,7 +259,7 @@ export default function HeroSection({ latestEpisode }: Props) {
           <div
             className="w-[46px] h-[46px] flex-shrink-0 bg-carbon-deep"
             style={{
-              backgroundImage: `url('/covers/${latestEpisode.podcast_number}.jpeg')`,
+              backgroundImage: `url('/covers/41.png')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'saturate(1.1)',
@@ -282,7 +270,7 @@ export default function HeroSection({ latestEpisode }: Props) {
               ▶ AHORA SONANDO · EP {epNum}
             </div>
             <div className="font-nunito font-bold text-[0.95rem] text-cream mt-0.5 truncate">
-              {latestEpisode.title}
+              {featuredTitle}
             </div>
             <div className="font-mono-brand text-[10px] text-teal/80 mt-0.5 tracking-[0.1em]">
               CRIMEN!.MP3 · ÚLTIMO EPISODIO

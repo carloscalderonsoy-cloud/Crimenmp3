@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import Header from '@/components/header';
 import HeroSection from '@/components/heroSection';
+import EpisodioDestacado from '@/components/episodioDestacado';
 import EpisodiosRecientes from '@/components/episodiosRecientes';
 import TodosEpisodios from '@/components/todosEpisodios';
 import NewsletterApuntate from '@/components/newsLetterApuntate';
@@ -18,6 +19,7 @@ export default async function Home() {
     <main className="bg-carbon">
       <Header />
       <HeroSection latestEpisode={latestEpisode} />
+      <EpisodioDestacado />
       <EpisodiosRecientes />
       <TodosEpisodios />
       <NewsletterApuntate />
