@@ -308,32 +308,36 @@ export default function HeroSection({ latestEpisode }: Props) {
       <audio ref={audioRef} src="/audio/FondoCrimenWeb.mp3" loop preload="none" />
 
       {/* ── Sound toggle ── */}
+      {/* ── Sound toggle (Llamado a la acción) ── */}
+      {/* ── Sound toggle (Llamado a la acción debajo del logo) ── */}
       <button
         onClick={() => setSoundOn(v => !v)}
         aria-label={soundOn ? 'Silenciar ambiente' : 'Activar sonido ambiente'}
-        className="absolute bottom-7 right-[clamp(20px,4vw,56px)] z-20 flex items-center gap-2 font-mono-brand text-[10px] tracking-[0.22em] uppercase transition-colors duration-200"
+        // Lo movimos a la izquierda y lo bajamos (top-[260px] aprox)
+        className={`absolute top-[260px] md:top-[290px] left-[clamp(20px,4vw,56px)] z-50 flex items-center gap-2 font-mono-brand text-[10px] tracking-[0.22em] uppercase transition-all duration-300 ${!soundOn ? 'animate-pulse' : ''}`}
         style={{
-          color: soundOn ? '#FC47AF' : 'rgba(250,235,216,0.55)',
+          color: soundOn ? '#FC47AF' : '#FAEBD6', 
+          background: !soundOn ? 'rgba(252,71,175,0.15)' : 'none',
+          border: !soundOn ? '1px solid rgba(252,71,175,0.5)' : 'none',
+          padding: !soundOn ? '6px 12px' : '0',
+          boxShadow: !soundOn ? '0 0 15px rgba(252,71,175,0.2)' : 'none',
           opacity: 0,
           animation: 'fadeInUp 1.2s ease-out 1400ms both',
-          background: 'none',
-          border: 'none',
           cursor: 'pointer',
-          padding: 0,
         }}
       >
         {soundOn ? (
-          /* Speaker on */
+          /* Speaker On */
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
           </svg>
         ) : (
-          /* Speaker off */
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          /* Ícono de Play (Llamado a la acción) */
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+            <polygon points="2,1 11,6 2,11" />
           </svg>
         )}
-        {soundOn ? 'SONIDO' : 'SILENCIO'}
+        {soundOn ? 'SONIDO' : 'PLAY ME'}
       </button>
 
       {/* ── Scroll indicator ── */}
