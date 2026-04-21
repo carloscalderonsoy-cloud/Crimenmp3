@@ -20,22 +20,86 @@ export default async function Episodios() {
     <div className="min-h-screen bg-carbon">
       <Header />
 
-      {/* Page header */}
-      <div className="pt-32 pb-16 px-8 md:px-16 bg-carbon-deep border-b border-magenta/15 relative overflow-hidden">
-        <div className="scanlines absolute inset-0 opacity-[0.07]" />
-        <div className="relative z-10">
-          <p className="font-mono-brand text-xs text-magenta tracking-[0.2em] mb-2 uppercase">
+      {/* ── Video page header ── */}
+      <div
+        className="relative w-full overflow-hidden bg-carbon"
+        style={{ height: 'clamp(380px, 55vh, 620px)', isolation: 'isolate' }}
+      >
+        {/* Video */}
+        <video
+          autoPlay muted loop playsInline
+          poster="/main-compressed.png"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            opacity: 0.5,
+            transform: 'scale(1.04)',
+            filter: 'saturate(1.1) contrast(1.05)',
+          }}
+          aria-hidden="true"
+        >
+          <source src="/videos/loop2.mp4" type="video/mp4" />
+        </video>
+
+        {/* Gradient overlays */}
+        <div
+          className="absolute inset-0 z-[2] pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(180deg,rgba(42,38,38,0.72) 0%,rgba(42,38,38,0.18) 40%,rgba(42,38,38,0.92) 100%),' +
+              'radial-gradient(ellipse 80% 60% at center,transparent 0%,rgba(42,38,38,0.88) 100%)',
+          }}
+        />
+
+        {/* VHS Scanlines */}
+        <div className="hero__scanlines absolute inset-0 z-[3]" />
+
+        {/* Noise */}
+        <div className="hero__noise absolute z-[3]" style={{ inset: '-50%' }} />
+
+        {/* Chromatic aberration edge */}
+        <div
+          className="absolute inset-0 z-[4] pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(90deg,rgba(252,71,175,0.1) 0%,transparent 8%,transparent 92%,rgba(176,204,201,0.1) 100%)',
+            mixBlendMode: 'screen',
+          }}
+        />
+
+        {/* Corner telemetry */}
+        <div
+          className="absolute z-20 font-mono-brand text-[10px] tracking-[0.22em] text-cream/55 uppercase hidden sm:block"
+          style={{ top: 96, left: 'clamp(20px,4vw,56px)' }}
+        >
+          ARCHIVO<span className="mx-1.5 text-magenta">·</span>TEMP. 01
+        </div>
+        <div
+          className="absolute z-20 font-mono-brand text-[10px] tracking-[0.22em] text-cream/55 uppercase text-right hidden sm:block"
+          style={{ top: 96, right: 'clamp(20px,4vw,56px)' }}
+        >
+          {episodios.length} EXPEDIENTES<span className="mx-1.5 text-magenta">·</span>EN CURSO
+        </div>
+
+        {/* Content */}
+        <div
+          className="absolute inset-0 z-10 flex flex-col justify-end"
+          style={{ padding: 'clamp(24px,6vw,80px)', paddingTop: 0 }}
+        >
+          <p className="font-mono-brand text-[11px] tracking-[0.35em] text-magenta uppercase mb-3">
             Archivo · {episodios.length} expedientes
           </p>
-          <div className="w-16 h-0.5 bg-magenta mb-6" />
           <h1
-            className="font-bebas text-cream leading-none tracking-wide"
-            style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)' }}
+            className="font-bebas text-cream leading-none"
+            style={{
+              fontSize: 'clamp(3.2rem, 9vw, 7rem)',
+              letterSpacing: '0.03em',
+              textShadow: '0 2px 0 rgba(0,0,0,0.5), 0 0 40px rgba(252,71,175,0.12)',
+            }}
           >
             TODOS LOS<br />
             <em className="not-italic text-magenta">EPISODIOS</em>.
           </h1>
-          <p className="font-nunito text-teal text-base mt-4 max-w-xl">
+          <p className="font-nunito text-teal text-base mt-3 max-w-xl" style={{ lineHeight: 1.5 }}>
             {episodios.length} casos. Cada expediente, su canción.
           </p>
         </div>
