@@ -189,7 +189,7 @@ export default function HeroSection({ latestEpisode }: Props) {
 
         {/* Logos: Crimen + By Lumo */}
         <div
-          className="relative inline-block"
+          className="flex items-end gap-5"
           style={{ opacity: 0, animation: 'fadeInUp 1.2s ease-out 150ms both' }}
         >
           <Image
@@ -200,25 +200,22 @@ export default function HeroSection({ latestEpisode }: Props) {
             priority
             className="h-auto block"
             style={{
-              width: 'clamp(240px, 52vw, 420px)',
+              width: 'clamp(220px, 48vw, 400px)',
               filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.55))',
             }}
           />
-          {/* By Lumo — bottom-right of Crimen logo */}
-          <div className="absolute -bottom-3 -right-2 sm:-right-6">
-            <Image
-              src="/logo-lumo.png"
-              alt="By Lumo"
-              width={110}
-              height={88}
-              className="h-auto"
-              style={{
-                width: 'clamp(72px, 14vw, 110px)',
-                mixBlendMode: 'multiply',
-                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))',
-              }}
-            />
-          </div>
+          <Image
+            src="/logo-lumo.png"
+            alt="By Lumo"
+            width={100}
+            height={80}
+            className="h-auto block flex-shrink-0 mb-1"
+            style={{
+              width: 'clamp(64px, 12vw, 100px)',
+              mixBlendMode: 'multiply',
+              filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))',
+            }}
+          />
         </div>
 
         {/* Tagline */}
