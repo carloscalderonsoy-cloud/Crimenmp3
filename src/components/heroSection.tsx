@@ -187,21 +187,39 @@ export default function HeroSection({ latestEpisode }: Props) {
           NUEVO EPISODIO · CADA JUEVES
         </div>
 
-        {/* Logo */}
-        <Image
-          src="/logo.png"
-          alt="Crimen.mp3"
-          width={420}
-          height={168}
-          priority
-          className="h-auto"
-          style={{
-            width: 'clamp(240px, 52vw, 420px)',
-            opacity: 0,
-            animation: 'fadeInUp 1.2s ease-out 150ms both',
-            filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.55))',
-          }}
-        />
+        {/* Logos: Crimen + By Lumo */}
+        <div
+          className="relative inline-block"
+          style={{ opacity: 0, animation: 'fadeInUp 1.2s ease-out 150ms both' }}
+        >
+          <Image
+            src="/logo.png"
+            alt="Crimen.mp3"
+            width={420}
+            height={168}
+            priority
+            className="h-auto block"
+            style={{
+              width: 'clamp(240px, 52vw, 420px)',
+              filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.55))',
+            }}
+          />
+          {/* By Lumo — bottom-right of Crimen logo */}
+          <div className="absolute -bottom-3 -right-2 sm:-right-6">
+            <Image
+              src="/logo-lumo.png"
+              alt="By Lumo"
+              width={110}
+              height={88}
+              className="h-auto"
+              style={{
+                width: 'clamp(72px, 14vw, 110px)',
+                mixBlendMode: 'multiply',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))',
+              }}
+            />
+          </div>
+        </div>
 
         {/* Tagline */}
         <h1
