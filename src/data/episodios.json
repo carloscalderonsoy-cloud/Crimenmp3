@@ -3,6 +3,13 @@
         {
             "podcast_number": 1,
             "title": "Pesadilla en Las Vegas",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1D6QIKxOTBnKY7pDBUoLfM?si=c93a2c5c79274111",
             "youtube_url": "https://youtu.be/fQKHezkWnpA?si=RzsXks5yvfXKOyXA",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/c370c142-990d-4b70-b21b-58d221d9cbee/crimen-mp3-ep-1-pesadilla-en-las-vegas-feat--chaparro-salazar"
@@ -10,6 +17,13 @@
         {
             "podcast_number": 2,
             "title": "Los Pobres Corazones de Fito",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/4ckicFM5tLOjR1ISQ3ftxx?si=fcf873c5bd9041c1",
             "youtube_url": "https://youtu.be/rwFx-qHmY_8?si=MZZtFBRg5CQAkNT2",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/ecb9123a-1d21-4a62-96c1-3ff002b888a4/crimen-mp3-ep-2-los-pobres-corazones-de-fito---feat-hueycoyote"
@@ -17,6 +31,13 @@
         {
             "podcast_number": 3,
             "title": "El Demonio del Río Genesse",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/6wvoNd0zAAaXLnFiGuPI1Y?si=debf96853a12487a",
             "youtube_url": "https://youtu.be/YweD13oc-xI?si=2foDZ05zPmws_dNJ",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/97dce905-f9b5-4bf4-b842-5221fe1a63e2/crimen-mp3-ep-3-el-demonio-del-r%C3%ADo-genesse---feat-sebasti%C3%A1n-camelo-serialmente"
@@ -24,6 +45,13 @@
         {
             "podcast_number": 4,
             "title": "El Horror en la Familia Clutter",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1M78o3y245sBz8E3nRmlsu?si=0cb086cb5dbc463d",
             "youtube_url": "https://youtu.be/tzPOqWZ0mFY?si=-0y-DzyxYdYbQo8Y",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/a95ed405-1f92-45a0-94ef-b4f0bb4070a7/crimen-mp3-ep-4-el-horror-en-la-familia-clutter---feat-xanic"
@@ -31,6 +59,13 @@
         {
             "podcast_number": 5,
             "title": "Rubín Carter: La Otra Cara del Crimen",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/2kouoFNIq341IN9LGtWzDA?si=ba544e829ab7451b",
             "youtube_url": "https://youtu.be/zWQYzBA0CoQ?si=98fO60L0IkHUwwNm",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/22e77c1d-d8bf-49e2-91b3-dfb770618afc/crimen-mp3-ep-5-rubin-carter-la-otra-cara-del-crimen---feat-yubeili"
@@ -38,6 +73,13 @@
         {
             "podcast_number": 6,
             "title": "Jacques Mesrine: El Robin Hood Francés",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/2lZt4UWPekqfTUgjrbBrtZ?si=fc9c158cf3484013",
             "youtube_url": "https://youtu.be/z3O59K2Wz3Y?si=Q7dCKIw8SR5LUCQ5",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/1d840313-9dc1-4222-8a1c-70b3a05eb174/crimen-mp3-ep-6-jacques-mesrine-el-robin-hood-franc%C3%A9s-feat--luiki-wiki"
@@ -45,6 +87,13 @@
         {
             "podcast_number": 7,
             "title": "La Matanza de San Valentín",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/37dQHd0ND5Rn9xUNs5TL1N?si=8ac7431d5a524971",
             "youtube_url": "https://youtu.be/bo8jfGLierY?si=rFKJQ-t63AyG2HKj",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/55dde3f8-59f3-4b8c-9406-1d82d5dc64ff/crimen-mp3-ep-7-la-matanza-de-san-valent%C3%ADn-feat-josafat"
@@ -52,6 +101,13 @@
         {
             "podcast_number": 8,
             "title": "Bonnie y Clyde",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1bz9D70LZXpvkti1U6NrUp?si=504cafae2588459a",
             "youtube_url": "https://youtu.be/l5saQGzp8zg?si=vzdqZSDTl931u8nj",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/7b2a5867-850f-49e0-b9a7-1a7ce77daad8/crimen-mp3-ep-8-bonnie-y-clyde-feat-carolina-frausto"
@@ -59,6 +115,13 @@
         {
             "podcast_number": 9,
             "title": "Los Asesinatos de los Páramos",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/4W6jeoyn0OEqRWetMs8d2Q?si=15abdef603234d49",
             "youtube_url": "https://youtu.be/es44jvyayww?si=BIFUBoRCLVwK_1DM",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/f9567da9-0600-4975-9b6f-38c0c14ea6f3/crimen-mp3-ep-9-los-asesinatos-de-los-p%C3%A1ramos-feat--ilich-flores"
@@ -66,6 +129,13 @@
         {
             "podcast_number": 10,
             "title": "El Carnicero de Uganda",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/5BbJyscsXeEUuSQUE7iuT4?si=7e15d98c79ee4ccf",
             "youtube_url": "https://youtu.be/UFktyWqvVOU?si=AonlRedZIiCX7UGY",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/a3ea4995-ca91-40d1-a67f-ad4590b7b9b7/crimen-mp3-ep-10-el-carnicero-de-uganda-feat--cocom"
@@ -73,6 +143,13 @@
         {
             "podcast_number": 11,
             "title": "Charles Whitman y el Tumor",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/2QTh4oCf1DL9YMVfQrn5nG?si=de201e559f954116",
             "youtube_url": "https://youtu.be/ULC_779DrmY?si=CKYsf_UWRcJ6nqi7",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/3e8842ef-1177-4823-b817-3e33566cbfdb/crimen-mp3-ep-11-charles-whitman-y-el-tumor-feat--soldado-alexa-bueno"
@@ -80,6 +157,13 @@
         {
             "podcast_number": 12,
             "title": "David Berkowitz y el Perro",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1ucKJD4BkchWzbkT58Ju8M?si=f9cdd940e8fe42d2",
             "youtube_url": "https://youtu.be/wVRPpr742ec?si=bk_CW8ZtDmyhj0le",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/38a21463-85a8-40bd-98b7-a9a25274310b/crimen-mp3-ep-12-david-berkowitz-y-el-perro-feat--bren-vila"
@@ -87,6 +171,13 @@
         {
             "podcast_number": 13,
             "title": "El Monstruo de Atlanta",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/3cLXKnUgy0iNEMbMWOPnFb?si=cc65283cc7024d4e",
             "youtube_url": "https://youtu.be/dSw9JvnOFCc?si=qKntv7y4NE3RTDRw",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/c9023c3f-72da-498e-b481-da02633661f7/crimen-mp3-ep-13-el-monstruo-de-atlanta-feat-gabo-serna"
@@ -94,6 +185,13 @@
         {
             "podcast_number": 14,
             "title": "Richard Speck y las 8 Enfermeras",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/0xM5fVIAOZO21KWSdwynmP?si=0c86a876645b4187",
             "youtube_url": "https://youtu.be/PEQYEGK8bCA?si=iifoEWO1RyTw9Uur",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/b7d7f273-2ec5-4c3d-9b05-e4e6ae7f22e7/crimen-mp3-ep-14-richard-speck-y-las-8-enfermeras-feat-guy-trejo"
@@ -101,6 +199,13 @@
         {
             "podcast_number": 15,
             "title": "Katherine Knight: Te Voy a Comer",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/0i7Ee10gT2L0BTTp01DHnz?si=d82b7fdcd97e4ce6",
             "youtube_url": "https://youtu.be/2MFbF27Kb8M?si=D9WdsfiLMJkmwOvO",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/36258613-4632-4547-aff5-711373d5d5b3/crimen-mp3-ep-15-katherine-knight-te-voy-a-comer-feat--carlos-achepe"
@@ -108,6 +213,13 @@
         {
             "podcast_number": 16,
             "title": "Claudine Longet: Amiga de los Kennedy",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1Gbgw0zAzYJg9hgkbFC3LR?si=6df6fdc1d1304aaa",
             "youtube_url": "https://youtu.be/CtnXwitFuyk?si=dRRRYTd95Vsk8JV5",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/b32ed917-f231-4fa7-8573-2b3e51be5a71/crimen-mp3-ep-16-claudine-longet-la-amiga-criminal-de-los-kennedy-feat--lisette-cuevas"
@@ -115,6 +227,13 @@
         {
             "podcast_number": 17,
             "title": "Los Crímenes de Barbie y Ken",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1GNnr74tgzp4aPgTtbZDGH?si=0c38e4310e834427",
             "youtube_url": "https://youtu.be/cKJRGRyMnRQ?si=A3iD_uiBbyf3wDMS",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/d6851f4a-8515-4802-89d9-33f331878fa4/crimen-mp3-ep-17-los-cr%C3%ADmenes-de-barbie-y-ken-feat--carlos-mosco"
@@ -122,6 +241,13 @@
         {
             "podcast_number": 18,
             "title": "Los Francotiradores de D.C.",
+            "descripcion": "—",
+            "track": "—",
+            "artista": "—",
+            "duracion": "—",
+            "invitado": "—",
+            "caso": "—",
+            "genero": "—",
             "spotify_url": "https://open.spotify.com/episode/1i7XEp2Sfs807MBcRuc5Pw?si=e09049accad74556",
             "youtube_url": "https://youtu.be/3EaP_VuAMX0?si=RWuIEQkVpcrOM4Fg",
             "amazon_url": "https://music.amazon.com.mx/podcasts/64b8759f-18f8-4bb7-835e-b2e214482935/episodes/2fbb5e6b-b57d-421d-9171-7fe1cbfb1ab7/crimen-mp3-ep-18-los-francotiradores-de-d-c-feat--ana"
