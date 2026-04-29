@@ -8,9 +8,29 @@ interface EpisodioExpedienteProps {
   invitado: string
   caso: string
   genero: string
-  spotify_url: string
-  youtube_url: string
-  amazon_url: string
+  spotify_url: string | null
+  youtube_url: string | null
+  amazon_url: string | null
+}
+
+function splitTitle(title: string): { before: string; highlight: string; useBreak: boolean } {
+  const colonIdx = title.indexOf(': ')
+  if (colonIdx !== -1) {
+    return {
+      before: title.substring(0, colonIdx + 1),
+      highlight: title.substring(colonIdx + 2),
+      useBreak: true,
+    }
+  }
+  const lastSpace = title.lastIndexOf(' ')
+  if (lastSpace !== -1) {
+    return {
+      before: title.substring(0, lastSpace),
+      highlight: title.substring(lastSpace + 1),
+      useBreak: false,
+    }
+  }
+  return { before: '', highlight: title, useBreak: false }
 }
 
 export default function EpisodioExpediente({
@@ -28,6 +48,7 @@ export default function EpisodioExpediente({
   amazon_url,
 }: EpisodioExpedienteProps) {
   const epNum = String(podcast_number).padStart(3, '0')
+  const { before, highlight, useBreak } = splitTitle(title)
 
   const meta = [
     { k: 'Track',    v: track    },
@@ -57,7 +78,7 @@ export default function EpisodioExpediente({
         style={{ padding: 'clamp(48px,7vw,100px) clamp(24px,6vw,80px)' }}
       >
         <div className="featured__grid">
-          {/* Cover — placeholder until real covers arrive */}
+          {/* Cover placeholder */}
           <div className="max-w-[420px] md:max-w-none w-full">
             <div
               className="relative w-full overflow-hidden"
@@ -117,7 +138,12 @@ export default function EpisodioExpediente({
                 textShadow: '0 2px 0 rgba(0,0,0,0.4)',
               }}
             >
-              {title}
+              {before && (
+                useBreak
+                  ? <>{before}<br /></>
+                  : <>{before}{' '}</>
+              )}
+              <em style={{ fontStyle: 'normal', color: '#FC47AF' }}>{highlight}</em>
             </h2>
 
             {descripcion && descripcion !== '—' && (
@@ -163,54 +189,60 @@ export default function EpisodioExpediente({
               ))}
             </div>
 
-            {/* CTA buttons */}
+            {/* CTA buttons — only render when URL is available */}
             <div className="flex flex-wrap" style={{ gap: 12, marginTop: 8 }}>
-              <a
-                href={spotify_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center font-swell text-carbon bg-magenta transition-all duration-200 hover:bg-light-purple hover:text-cream"
-                style={{
-                  fontSize: '1.05rem',
-                  letterSpacing: '0.12em',
-                  padding: '0.9rem 2.2rem',
-                  gap: 10,
-                  boxShadow: '4px 4px 0 0 #2A2626, 4px 4px 0 1px #FAEBD6',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-                  <polygon points="2,1 11,6 2,11" />
-                </svg>
-                SPOTIFY
-              </a>
-              <a
-                href={youtube_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center font-swell text-cream transition-all duration-200 hover:border-cream hover:bg-cream/[0.06]"
-                style={{
-                  fontSize: '1.05rem',
-                  letterSpacing: '0.12em',
-                  padding: '0.9rem 2.2rem',
-                  border: '1.5px solid rgba(250,235,216,0.45)',
-                }}
-              >
-                YOUTUBE
-              </a>
-              <a
-                href={amazon_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center font-swell text-cream transition-all duration-200 hover:border-cream hover:bg-cream/[0.06]"
-                style={{
-                  fontSize: '1.05rem',
-                  letterSpacing: '0.12em',
-                  padding: '0.9rem 2.2rem',
-                  border: '1.5px solid rgba(250,235,216,0.45)',
-                }}
-              >
-                AMAZON
-              </a>
+              {spotify_url && (
+                <a
+                  href={spotify_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-swell text-carbon bg-magenta transition-all duration-200 hover:bg-light-purple hover:text-cream"
+                  style={{
+                    fontSize: '1.05rem',
+                    letterSpacing: '0.12em',
+                    padding: '0.9rem 2.2rem',
+                    gap: 10,
+                    boxShadow: '4px 4px 0 0 #2A2626, 4px 4px 0 1px #FAEBD6',
+                  }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                    <polygon points="2,1 11,6 2,11" />
+                  </svg>
+                  SPOTIFY
+                </a>
+              )}
+              {youtube_url && (
+                <a
+                  href={youtube_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-swell text-cream transition-all duration-200 hover:border-cream hover:bg-cream/[0.06]"
+                  style={{
+                    fontSize: '1.05rem',
+                    letterSpacing: '0.12em',
+                    padding: '0.9rem 2.2rem',
+                    border: '1.5px solid rgba(250,235,216,0.45)',
+                  }}
+                >
+                  YOUTUBE
+                </a>
+              )}
+              {amazon_url && (
+                <a
+                  href={amazon_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-swell text-cream transition-all duration-200 hover:border-cream hover:bg-cream/[0.06]"
+                  style={{
+                    fontSize: '1.05rem',
+                    letterSpacing: '0.12em',
+                    padding: '0.9rem 2.2rem',
+                    border: '1.5px solid rgba(250,235,216,0.45)',
+                  }}
+                >
+                  AMAZON
+                </a>
+              )}
             </div>
           </div>
         </div>

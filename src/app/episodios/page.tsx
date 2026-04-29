@@ -13,9 +13,9 @@ interface Episodio {
   invitado: string
   caso: string
   genero: string
-  spotify_url: string
-  youtube_url: string
-  amazon_url: string
+  spotify_url: string | null
+  youtube_url: string | null
+  amazon_url: string | null
 }
 
 export default async function Episodios() {

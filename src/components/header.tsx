@@ -5,10 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const NAV_ITEMS = [
-  { label: 'INICIO',      href: '/',           id: undefined },
-  { label: 'EPISODIOS',   href: '/episodios',  id: undefined },
-  { label: 'NEWSLETTER',  href: undefined,     id: 'newsletter-section' },
-  { label: 'SHOP',        href: undefined,     id: 'shop-section' },
+  { label: 'INICIO',        href: '/',                 id: undefined },
+  { label: 'EPISODIOS',     href: '/episodios',        id: undefined },
+  { label: 'CRIMINALISTA',  href: '/la-criminalista',  id: undefined },
+  { label: 'NEWSLETTER',    href: undefined,           id: 'newsletter-section' },
+  { label: 'SHOP',          href: undefined,           id: 'shop-section' },
 ] as const;
 
 export default function Header() {
@@ -32,7 +33,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -60,7 +60,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex gap-9 list-none m-0 p-0">
+        <ul className="hidden md:flex gap-7 list-none m-0 p-0">
           {NAV_ITEMS.map(({ label, href, id }) => {
             const isActive = href ? pathname === href : false;
             const base = `font-bebas tracking-widest text-sm pb-1 cursor-pointer relative
@@ -125,7 +125,7 @@ export default function Header() {
 
         {NAV_ITEMS.map(({ label, href, id }, i) => {
           const isActive = href ? pathname === href : false;
-          const cls = `font-bebas text-6xl leading-none transition-colors duration-200 ${
+          const cls = `font-bebas text-5xl leading-none transition-colors duration-200 ${
             isActive ? 'text-magenta' : 'text-cream hover:text-magenta'
           }`;
           const style = { animationDelay: `${i * 100}ms` };
