@@ -45,7 +45,7 @@ export default function EpisodioTarjeta({
     return (
       <div className="relative aspect-square overflow-hidden group cursor-pointer bg-carbon-deep">
         <Image
-          src={`/full_covers/${podcast_number}.jpeg`}
+          src={`/full_covers/${podcast_number}.png`}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           alt={`Episodio ${podcast_number}: ${title}`}
@@ -88,7 +88,7 @@ export default function EpisodioTarjeta({
   return (
     <div className="relative aspect-square overflow-hidden group cursor-pointer bg-carbon-deep">
       <Image
-        src={`/covers/${podcast_number}.jpeg`}
+        src={`/covers/${podcast_number}.png`}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         alt={`Episodio ${podcast_number}: ${title}`}
