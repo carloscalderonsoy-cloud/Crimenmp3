@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface EpisodioExpedienteProps {
   podcast_number: number
   title: string
@@ -98,24 +100,13 @@ export default function EpisodioExpediente({
               >
                 EP·{epNum}
               </span>
-              <div
-                className="absolute inset-0 flex items-center justify-center"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #1a1617 0%, #2A2626 50%, #1a1215 100%)',
-                }}
-              >
-                <span
-                  className="font-swell select-none"
-                  style={{
-                    fontSize: 'clamp(5rem, 14vw, 9rem)',
-                    letterSpacing: '0.05em',
-                    color: 'rgba(252,71,175,0.15)',
-                  }}
-                >
-                  {epNum}
-                </span>
-              </div>
+              <Image
+                src={`/covers/${podcast_number}.png`}
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                alt={`Portada episodio ${podcast_number}: ${title}`}
+                className="object-cover"
+              />
             </div>
           </div>
 
