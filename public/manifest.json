@@ -1,0 +1,25 @@
+{
+  "name": "Crimen!.mp3",
+  "short_name": "Crimen.mp3",
+  "description": "Crímenes reales, canciones reales. El podcast de true crime donde cada delito tiene su propio soundtrack.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2A2626",
+  "theme_color": "#FC47AF",
+  "orientation": "portrait",
+  "lang": "es",
+  "categories": ["entertainment", "music", "news"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

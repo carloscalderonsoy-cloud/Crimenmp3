@@ -1,7 +1,11 @@
 import { promises as fs } from 'fs';
+import type { Metadata } from 'next';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import EpisodioExpediente from '@/components/episodioExpediente';
+
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://crimen-podcast.vercel.app';
 
 interface Episodio {
   podcast_number: number
@@ -18,10 +22,66 @@ interface Episodio {
   amazon_url: string | null
 }
 
+export const metadata: Metadata = {
+  title: 'Todos los Episodios',
+  description:
+    'Archivo completo de Crimen!.mp3: 41 casos de true crime, cada uno con su propio soundtrack. Disponibles en Spotify, YouTube y Amazon Music.',
+  alternates: { canonical: '/episodios' },
+  openGraph: {
+    title: 'Todos los Episodios | Crimen!.mp3',
+    description: '41 casos de true crime, cada uno con su propio soundtrack.',
+    url: `${BASE_URL}/episodios`,
+    images: [{ url: '/main.png', width: 1200, height: 630, alt: 'Episodios Crimen!.mp3' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Todos los Episodios | Crimen!.mp3',
+    images: ['/main.png'],
+  },
+};
+
 export default async function Episodios() {
   const file = await fs.readFile(process.cwd() + '/src/data/episodios.json', 'utf8');
   const data = JSON.parse(file);
   const episodios: Episodio[] = data.episodios;
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio',    item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Episodios', item: `${BASE_URL}/episodios` },
+    ],
+  };
+
+  const episodesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Todos los episodios de Crimen!.mp3',
+    numberOfItems: episodios.length,
+    itemListElement: episodios.map((ep, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'PodcastEpisode',
+        '@id': ep.spotify_url || ep.youtube_url || `${BASE_URL}/episodios#ep${ep.podcast_number}`,
+        name: ep.title,
+        episodeNumber: ep.podcast_number,
+        description: ep.descripcion,
+        image: `${BASE_URL}/covers/${ep.podcast_number}.png`,
+        partOfSeries: { '@type': 'PodcastSeries', name: 'Crimen!.mp3', url: BASE_URL },
+        ...(ep.youtube_url && {
+          video: {
+            '@type': 'VideoObject',
+            name: ep.title,
+            description: ep.descripcion,
+            thumbnailUrl: `${BASE_URL}/covers/${ep.podcast_number}.png`,
+            url: ep.youtube_url,
+          },
+        }),
+      },
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-carbon">
@@ -134,6 +194,15 @@ export default async function Episodios() {
       </div>
 
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(episodesJsonLd) }}
+      />
     </div>
   );
 }

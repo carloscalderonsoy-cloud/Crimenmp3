@@ -108,7 +108,7 @@ export default function Header() {
 
       {/* ── Mobile overlay ── */}
       <div
-        className={`fixed inset-0 z-40 bg-carbon-deep flex flex-col items-center justify-center gap-8 transition-transform duration-[350ms] ease-in-out md:hidden ${
+        className={`fixed inset-0 z-[60] bg-carbon-deep flex flex-col items-center justify-center gap-8 transition-transform duration-[350ms] ease-in-out md:hidden ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >

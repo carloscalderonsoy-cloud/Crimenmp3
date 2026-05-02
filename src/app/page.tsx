@@ -19,7 +19,7 @@ export default async function Home() {
     <main className="bg-carbon">
       <Header />
       <HeroSection latestEpisode={latestEpisode} />
-      <EpisodioDestacado />
+      <EpisodioDestacado episode={latestEpisode} />
       <EpisodiosRecientes />
       <TodosEpisodios />
       <NewsletterApuntate />

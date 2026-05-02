@@ -1,25 +1,59 @@
 import Image from 'next/image';
 
-const FEATURED = {
-  number:      41,
-  titleLine1:  'Gianni Versace:',
-  titleLine2:  'la muerte de la',
-  titleEm:     'moda',
-  description: 'Miami, 1996. Andrew Cunanan cruza el país dejando un rastro de cuatro víctimas antes de apretar el gatillo frente a la reja de Casa Casuarina. Ocho semanas de caza, una Pistol de Modest Mouse de fondo, y una industria que nunca volvió a coser igual.',
-  meta: [
-    { k: 'Track',    v: 'Pistol'       },
-    { k: 'Artista',  v: 'Modest Mouse' },
-    { k: 'Duración', v: '47:02'        },
-    { k: 'Invitada', v: '@Crissa.Fit'  },
-    { k: 'Caso',     v: 'Miami · 1996' },
-    { k: 'Género',   v: 'Indie Rock'   },
-  ],
-  spotify_url: 'https://open.spotify.com/show/2NX89HGIa0vkXQLGV9OYDa',
-  youtube_url: 'https://www.youtube.com/@SoyCarlosCalderon',
-};
+interface EpisodioData {
+  podcast_number: number
+  title: string
+  descripcion: string
+  track: string
+  artista: string
+  duracion: string
+  invitado: string
+  caso: string
+  genero: string
+  spotify_url: string | null
+  youtube_url: string | null
+}
 
-export default function EpisodioDestacado() {
-  const epNum = String(FEATURED.number).padStart(3, '0');
+interface Props {
+  episode: EpisodioData
+}
+
+const SHOW_SPOTIFY_URL = 'https://open.spotify.com/show/2NX89HGIa0vkXQLGV9OYDa';
+const SHOW_YOUTUBE_URL = 'https://www.youtube.com/@SoyCarlosCalderon';
+
+function splitFeaturedTitle(title: string) {
+  const colonIdx = title.indexOf(': ')
+  if (colonIdx !== -1) {
+    const line1 = title.substring(0, colonIdx + 1)
+    const rest = title.substring(colonIdx + 2)
+    const lastSpace = rest.lastIndexOf(' ')
+    if (lastSpace !== -1) {
+      return { line1, line2: rest.substring(0, lastSpace), em: rest.substring(lastSpace + 1) }
+    }
+    return { line1, line2: '', em: rest }
+  }
+  const lastSpace = title.lastIndexOf(' ')
+  if (lastSpace !== -1) {
+    return { line1: '', line2: title.substring(0, lastSpace), em: title.substring(lastSpace + 1) }
+  }
+  return { line1: '', line2: '', em: title }
+}
+
+export default function EpisodioDestacado({ episode }: Props) {
+  const epNum = String(episode.podcast_number).padStart(3, '0');
+  const { line1, line2, em } = splitFeaturedTitle(episode.title)
+
+  const meta = [
+    { k: 'Track',    v: episode.track    },
+    { k: 'Artista',  v: episode.artista  },
+    { k: 'Duración', v: episode.duracion },
+    { k: 'Invitado', v: episode.invitado },
+    { k: 'Caso',     v: episode.caso     },
+    { k: 'Género',   v: episode.genero   },
+  ]
+
+  const spotifyHref = episode.spotify_url || SHOW_SPOTIFY_URL;
+  const youtubeHref = episode.youtube_url || SHOW_YOUTUBE_URL;
 
   return (
     <section
@@ -62,7 +96,7 @@ export default function EpisodioDestacado() {
         style={{ padding: 'clamp(80px,10vw,140px) clamp(24px,6vw,80px)' }}
       >
         <div className="featured__grid">
-          {/* ── Cover image ── */}
+          {/* Cover image */}
           <div className="max-w-[420px] md:max-w-none w-full">
             <div
               className="relative w-full overflow-hidden"
@@ -83,17 +117,16 @@ export default function EpisodioDestacado() {
                 EP·{epNum} / AHORA SONANDO
               </span>
               <Image
-                src="/covers/41.png"
-                alt="Gianni Versace — La muerte de la moda"
+                src={`/covers/${episode.podcast_number}.png`}
+                alt={episode.title}
                 fill
                 className="object-cover"
               />
             </div>
           </div>
 
-          {/* ── Text content ── */}
+          {/* Text content */}
           <div>
-            {/* Eyebrow */}
             <p
               className="font-mono-brand uppercase text-magenta"
               style={{ fontSize: 11, letterSpacing: '0.35em' }}
@@ -101,7 +134,6 @@ export default function EpisodioDestacado() {
               EPISODIO DESTACADO
             </p>
 
-            {/* Title */}
             <h2
               className="font-comic text-cream"
               style={{
@@ -112,17 +144,16 @@ export default function EpisodioDestacado() {
                 textShadow: '0 2px 0 rgba(0,0,0,0.4)',
               }}
             >
-              {FEATURED.titleLine1}<br />
-              {FEATURED.titleLine2}<br />
-              <em style={{ fontStyle: 'normal', color: '#FC47AF' }}>{FEATURED.titleEm}</em>.
+              {line1 && <>{line1}<br /></>}
+              {line2 && <>{line2}<br /></>}
+              <em style={{ fontStyle: 'normal', color: '#FC47AF' }}>{em}</em>.
             </h2>
 
-            {/* Description */}
             <p
               className="font-nunito text-teal"
               style={{ fontSize: '1.05rem', lineHeight: 1.65, maxWidth: 520 }}
             >
-              {FEATURED.description}
+              {episode.descripcion}
             </p>
 
             {/* Meta grid */}
@@ -135,7 +166,7 @@ export default function EpisodioDestacado() {
                 maxWidth: 520,
               }}
             >
-              {FEATURED.meta.map(({ k, v }) => (
+              {meta.map(({ k, v }) => (
                 <div
                   key={k}
                   style={{
@@ -162,7 +193,7 @@ export default function EpisodioDestacado() {
             {/* CTA buttons */}
             <div className="flex flex-wrap" style={{ gap: 12, marginTop: 8 }}>
               <a
-                href={FEATURED.spotify_url}
+                href={spotifyHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="featured-btn-primary inline-flex items-center font-comic text-carbon bg-magenta transition-all duration-200 hover:bg-light-purple hover:text-cream"
@@ -180,7 +211,7 @@ export default function EpisodioDestacado() {
                 REPRODUCIR EN SPOTIFY
               </a>
               <a
-                href={FEATURED.youtube_url}
+                href={youtubeHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center font-comic text-cream transition-all duration-200 hover:border-cream hover:bg-cream/[0.06]"
