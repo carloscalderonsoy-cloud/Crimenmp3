@@ -73,15 +73,13 @@ const PILLARS = [
   { value: '25+', label: 'Invitados especiales', sub: 'músicos · comediantes · artistas' },
 ]
 
-// BTS photo collage — 7 frames from studio recordings
+// BTS photo collage — 5 real studio photos (converted from HEIC)
 const BTS_COLLAGE = [
-  { src: '/bts/andrea.jpg',     style: { left: '-1%',  top:    '-8%',  width: '33%' }, rotate: -2,   opacity: 0.38 },
-  { src: '/bts/andy_vargas.jpg',style: { right: '-2%', top:    '2%',   width: '30%' }, rotate: 1.5,  opacity: 0.32 },
-  { src: '/bts/camacholos.jpg', style: { left: '22%',  bottom: '-6%',  width: '31%' }, rotate: 1,    opacity: 0.30 },
-  { src: '/bts/fredy_regio.jpg',style: { left: '48%',  top:    '8%',   width: '27%' }, rotate: -1,   opacity: 0.28 },
-  { src: '/bts/lisett.jpg',     style: { right: '12%', bottom: '-5%',  width: '33%' }, rotate: -2.5, opacity: 0.32 },
-  { src: '/bts/nancy.jpg',      style: { left: '4%',   top:    '38%',  width: '26%' }, rotate: 2,    opacity: 0.26 },
-  { src: '/bts/velarde.jpg',    style: { right: '-1%', bottom: '18%',  width: '29%' }, rotate: -1.5, opacity: 0.30 },
+  { src: '/bts/IMG_1539.jpg', style: { left:  '-2%', top:  '-5%',  width: '30%' }, rotate: -2,   opacity: 0.42 },
+  { src: '/bts/IMG_6193.jpg', style: { right: '-2%', top:  '-3%',  width: '32%' }, rotate:  1.5, opacity: 0.38 },
+  { src: '/bts/IMG_8579.jpg', style: { left:  '30%', top:  '-8%',  width: '34%' }, rotate: -0.5, opacity: 0.35 },
+  { src: '/bts/IMG_9475.jpg', style: { left:  '-3%', bottom: '-8%', width: '31%' }, rotate:  2,   opacity: 0.32 },
+  { src: '/bts/IMG_9528.jpg', style: { right: '-1%', bottom: '-5%', width: '32%' }, rotate: -1.5, opacity: 0.36 },
 ]
 
 function TrackPill({ song, artist }: { song: string; artist: string }) {
@@ -124,8 +122,9 @@ export default function SobreElPodcast() {
                 ...style,
                 aspectRatio: '4/3',
                 transform: `rotate(${rotate}deg)`,
-                filter: 'grayscale(65%) contrast(0.85) brightness(0.7)',
+                filter: 'grayscale(60%) contrast(0.88) brightness(0.65)',
                 opacity,
+                aspectRatio: '3/4',
               }}
             >
               <Image
@@ -133,7 +132,7 @@ export default function SobreElPodcast() {
                 fill
                 sizes="33vw"
                 alt=""
-                className="object-cover object-center"
+                className="object-cover object-top"
               />
             </div>
           ))}
