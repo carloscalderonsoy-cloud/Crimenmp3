@@ -120,11 +120,10 @@ export default function SobreElPodcast() {
               className="absolute overflow-hidden"
               style={{
                 ...style,
-                aspectRatio: '4/3',
+                aspectRatio: '3/4',
                 transform: `rotate(${rotate}deg)`,
                 filter: 'grayscale(60%) contrast(0.88) brightness(0.65)',
                 opacity,
-                aspectRatio: '3/4',
               }}
             >
               <Image
