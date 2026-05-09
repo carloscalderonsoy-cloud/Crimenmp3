@@ -164,6 +164,25 @@ body {
   }
 }
 
+/* ── Marquee (sobreElPodcast) ── */
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee-left  { animation: marqueeLeft  38s linear infinite; }
+.marquee-right { animation: marqueeRight 44s linear infinite; }
+.marquee-wrap:hover .marquee-left,
+.marquee-wrap:hover .marquee-right { animation-play-state: paused; }
+
 /* ── Local fonts with font-display: swap (FOUT fix) ── */
 @font-face {
   font-family: 'ComicBook';
